@@ -3,6 +3,7 @@ import cors from 'cors'
 import 'dotenv/config'
 import connectDB from './config/mongodb.js'
 import connectCloudinary from './config/cloudinary.js'
+import adminRouter from './routes/adminRoute.js'
 
 
 //app config
@@ -21,3 +22,5 @@ app.get('/',(req,res)=>{
 })
 
 app.listen(port, ()=> console.log("Server Started", port))
+
+app.use('/api/admin',adminRouter)
